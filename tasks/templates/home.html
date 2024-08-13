@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+
+{% block content %}
+
+    <head>
+        <meta charset="UTF-8">
+    
+        <h1> Home django crud</h1>
+    
+        <h2 style="color: greenyellow; font-size: 25px; font-weight: bold;">Bienvenido</h2>
+    
+        <title>Lista de Usuarios</title>
+        <style>
+            table {
+                width: 25%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lista de Usuarios</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in all_users %}
+                    <tr>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.password }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+{% endblock %}
+
+</html>
